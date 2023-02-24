@@ -1,7 +1,7 @@
-Creating packages on IBS
+Creating packages on OBS
 ========================
 
-The `./src/bci_build/update.py` script can automatically submit updates to
+The :file:`./src/bci_build/update.py` script can automatically submit updates to
 existing packages on OBS or IBS, but it will fail to create new ones that have
 just been added as code.
 
@@ -12,7 +12,7 @@ If you want to create a new Container Image on OBS, then proceed as follows:
 
 2. Create a new project on OBS in which you will create the initial package
    version. Usually the easiest way how to achieve this, is to branch an
-   existing package into your home project (we use busybox-image in below example),
+   existing package into your home project (we use ``busybox-image`` below),
    as that will ensure that the repositories have been setup correctly.
    Once you have created it, check it out to your file system:
 
@@ -37,7 +37,7 @@ If you want to create a new Container Image on OBS, then proceed as follows:
       $ poetry run ./src/bci_build/package.py $new_container_nvr-$SP_ID path_to_checkout_of_new_pkg_name
 
    where ``$new_container_nvr`` is the value of the
-   :py:attr:`~bci_build.package.BaseContainerImage.nvr` property of your
+   :py:attr:`~bci_build.package.BaseContainerImage.uid` property of your
    container class (this one is either the
    :py:attr:`~bci_build.package.BaseContainerImage.name` property or
    :py:attr:`~bci_build.package.BaseContainerImage.name` ``-``
